@@ -60,7 +60,7 @@ ros2 action send_goal /gripper_controller/gripper_cmd \
 
 ### Ejecutar script de prueba
 ```bash
-python3 src/i2rt/single/yam_arm_gazebo/scripts/control_arm_cli.py
+ros2 run yam_arm_gazebo control_arm_cli.py
 ```
 
 ## Ver Estado

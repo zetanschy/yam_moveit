@@ -28,6 +28,7 @@ install(
 install(
   PROGRAMS
   scripts/control_arm_cli.py
+  scripts/teleop_arm.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
