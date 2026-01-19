@@ -91,35 +91,12 @@ class ArmControllerCLI(Node):
         point.time_from_start = Duration(
             sec=int(duration_sec), nanosec=int((duration_sec % 1) * 1e9)
         )
-        # Velocities and accelerations can be left empty for simple position control
-        # point.velocities = [0.0] * len(self.joint_names)
-        # point.accelerations = [0.0] * len(self.joint_names)
 
         goal_msg.trajectory.points.append(point)
 
         self.get_logger().info(f"Sending goal: {joint_positions} to be reached in {duration_sec}s")
 
         self.action_client.send_goal_async(goal_msg)
-
-        # Optional: Add feedback and result handling if needed
-        # future = self.action_client.send_goal_async(goal_msg)
-        # rclpy.spin_until_future_complete(self, future)
-        # goal_handle = future.result()
-
-        # if not goal_handle.accepted:
-        #     self.get_logger().info('Goal rejected :(')
-        #     return False
-
-        # self.get_logger().info('Goal accepted :)')
-        # result_future = goal_handle.get_result_async()
-        # rclpy.spin_until_future_complete(self, result_future)
-        # result = result_future.result().result
-        # if result.error_code == FollowJointTrajectory.Result.SUCCESSFUL:
-        #     self.get_logger().info('Trajectory execution successful!')
-        # else:
-        #     self.get_logger().info(f'Trajectory execution failed '
-        #                             f'with error code: {result.error_code}')
-        # return True
 
         self.get_logger().info("Goal sent. The robot should be moving.")
         return True

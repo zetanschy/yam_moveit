@@ -159,8 +159,6 @@ class ArmTeleop(Node):
         """
         if 0 <= joint_index < len(self.joint_names):
             self.current_positions[joint_index] += direction * self.step_size
-            # Keep angles in reasonable range (optional: you can adjust limits)
-            # self.current_positions[joint_index] = max(-math.pi, min(math.pi, self.current_positions[joint_index]))
             self.send_goal(self.current_positions)
             self.print_status()
 
