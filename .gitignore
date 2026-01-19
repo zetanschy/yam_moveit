@@ -1,0 +1,14 @@
+.vscode/
+*.png
+__pycache__/
+
+# Ignore all .md files except README.md files
+*.md
+!README.md
+!**/README.md
+
+# Ignore MoveIt config directories
+**/rtop_moveit_config/
+**/rtop_moveit_config_assistant/
+**/yam_arm_moveit_config/
+**/yam_arm_moveit_config_assistant/

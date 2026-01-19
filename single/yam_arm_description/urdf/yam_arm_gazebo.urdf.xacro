@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="yam">
+
+  <!-- Arguments -->
+  <xacro:arg name="use_gazebo" default="true"/>
+  <xacro:arg name="ros2_controllers_path" default="yam_arm_moveit_config/config/ros2_controllers.yaml"/>
+
+  <!-- Include the base robot description as xacro -->
+  <xacro:include filename="$(find yam_arm_description)/urdf/yam_arm_gazebo_macro.xacro"/>
+   
+   <!-- World link -->
+   <link name="world">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.0"/>
+         <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   
+   <!-- Use the yam_arm macro with empty prefix and parent_link="world" -->
+   <xacro:yam_arm prefix="" parent_link="world" xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+   
+  <!-- ROS2 Control for Gazebo -->
+  <xacro:if value="$(arg use_gazebo)">
+    <!-- Gazebo ROS2 Control Plugin -->
+    <gazebo>
+      <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(arg ros2_controllers_path)</parameters>
+        <ros>
+          <remapping>/controller_manager/robot_description:=/robot_description</remapping>
+        </ros>
+      </plugin>
+    </gazebo>
+
+    <!-- Gazebo Material Colors for Links using RGBA values -->    
+    <!-- Camera -->    
+    <gazebo reference="camera_support">
+      <visual>
+        <material>
+          <ambient>0.1 0.1 0.1 1.0</ambient>
+          <diffuse>0.1 0.1 0.1 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>  
+
+    <!-- ROS2 Control Interfaces -->
+    <ros2_control name="IgnitionSystem" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name="joint1">
+        <command_interface name="position"/>
+        <state_interface name="position" />
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint2">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint3">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint4">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint5">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint6">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="left_finger">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="right_finger">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+  </xacro:if>
+</robot>
