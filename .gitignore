@@ -13,14 +13,15 @@ __pycache__/
 **/yam_arm_moveit_config_assistant/
 **/usd_bimanual/
 
-i2rt/bimanual/rtop_description/meshes/body_design.mtl
-i2rt/bimanual/rtop_description/meshes/body_design.obj
+bimanual/rtop_description/meshes/body_design.mtl
+bimanual/rtop_description/meshes/body_design.obj
 
-i2rt/bimanual/rtop_description/meshes/body.mtl
-i2rt/bimanual/rtop_description/meshes/body.obj
+bimanual/rtop_description/meshes/body.mtl
+bimanual/rtop_description/meshes/body.obj
 
-i2rt/bimanual/rtop_description/urdf/rtop_design.urdf
-i2rt/bimanual/rtop_description/urdf/rtop_design.urdf.xacro
+bimanual/rtop_description/urdf/rtop_design.urdf
+bimanual/rtop_description/urdf/rtop_design.urdf.xacro
 
-i2rt/bimanual/rtop_description/urdf/rtop_design/
+bimanual/rtop_description/urdf/rtop_design/
+bimanual/rtop_description/urdf/rtop/
 
