@@ -11,19 +11,6 @@ __pycache__/
 **/rtop_moveit_config/
 **/rtop_moveit_config_assistant/
 **/yam_arm_moveit_config_assistant/
-**/usd_bimanual/
 
-bimanual/rtop_description/meshes/body_design.mtl
-bimanual/rtop_description/meshes/body_design.obj
-
-bimanual/rtop_description/meshes/body.mtl
-bimanual/rtop_description/meshes/body.obj
-
-bimanual/rtop_description/urdf/rtop_design.urdf
-bimanual/rtop_description/urdf/rtop_design.urdf.xacro
-
-bimanual/rtop_description/urdf/rtop_design/
-bimanual/rtop_description/urdf/rtop/
 
 bimanual/rtop_gazebo/scripts/
-bimanual/usd_bimanual/
