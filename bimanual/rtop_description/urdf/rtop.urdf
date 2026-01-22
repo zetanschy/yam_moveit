@@ -11,16 +11,45 @@
       <mass value="10.0"/>
       <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0"/>
     </inertial>
+    <!-- TRONCO -->
     <visual name="base_visual">
-      <origin rpy="1.5708 0.0 1.5708" xyz="0.0 0.0 0.0"/>
+      <origin rpy="1.5708 0.0 1.5708" xyz="0.0 0.0 1.0"/>
       <geometry>
-        <mesh filename="package://rtop_description/meshes/body.obj"/>
+        <box size="0.30 1.0 0.25"/>
+      </geometry>
+    </visual>
+    <!-- HOMBROS -->
+    <visual name="base_visual_hombros">
+      <origin rpy="1.5708 0.0 1.5708" xyz="0.0 0.0 1.0"/>
+      <geometry>
+        <box size="0.8 0.12 0.10"/>
+      </geometry>
+    </visual>
+    <!-- CABEZA -->
+    <visual name="base_visual_cabeza">
+      <origin rpy="1.5708 0.0 1.5708" xyz="0.0 0.0 1.65"/>
+      <geometry>
+        <sphere radius="0.125"/>
       </geometry>
     </visual>
     <collision name="base_collision">
-      <origin rpy="1.5708 0.0 1.5708" xyz="0.0 0.0 0.0"/>
+      <origin rpy="1.5708 0.0 1.5708" xyz="0.0 0.0 1.0"/>
       <geometry>
-        <mesh filename="package://rtop_description/meshes/body.obj"/>
+        <box size="0.30 1.0 0.25"/>
+      </geometry>
+    </collision>
+    <!-- HOMBROS -->
+    <collision name="base_collision_hombros">
+      <origin rpy="1.5708 0.0 1.5708" xyz="0.0 0.0 1.0"/>
+      <geometry>
+        <box size="0.8 0.12 0.10"/>
+      </geometry>
+    </collision>
+    <!-- CABEZA -->
+    <collision name="base_collision_cabeza">
+      <origin rpy="1.5708 0.0 1.5708" xyz="0.0 0.0 1.65"/>
+      <geometry>
+        <sphere radius="0.125"/>
       </geometry>
     </collision>
   </link>

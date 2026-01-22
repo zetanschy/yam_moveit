@@ -10,5 +10,17 @@ __pycache__/
 # Ignore MoveIt config directories
 **/rtop_moveit_config/
 **/rtop_moveit_config_assistant/
-**/yam_arm_moveit_config/
 **/yam_arm_moveit_config_assistant/
+**/usd_bimanual/
+
+i2rt/bimanual/rtop_description/meshes/body_design.mtl
+i2rt/bimanual/rtop_description/meshes/body_design.obj
+
+i2rt/bimanual/rtop_description/meshes/body.mtl
+i2rt/bimanual/rtop_description/meshes/body.obj
+
+i2rt/bimanual/rtop_description/urdf/rtop_design.urdf
+i2rt/bimanual/rtop_description/urdf/rtop_design.urdf.xacro
+
+i2rt/bimanual/rtop_description/urdf/rtop_design/
+

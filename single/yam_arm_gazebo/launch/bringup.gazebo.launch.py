@@ -68,7 +68,7 @@ def generate_launch_description():
 
     # --- URDF / robot_description (xacro) ---
     # urdf_file_path = PathJoinSubstitution([FindPackageShare(package="yam_arm_moveit_config"), "urdf", "yam_arm_calib.urdf.xacro"])
-    urdf_file_path = PathJoinSubstitution([pkg_share, "urdf", "yam.urdf"])
+    urdf_file_path = PathJoinSubstitution([pkg_share, "urdf", "yam_cam.urdf.xacro"])
 
     # If your xacro accepts ros2_controllers_path:=..., pass it (safe even if unused in xacro)
     robot_description_command = Command(
