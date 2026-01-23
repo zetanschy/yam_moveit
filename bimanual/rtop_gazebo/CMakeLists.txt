@@ -27,8 +27,6 @@ install(
 
 install(
   PROGRAMS
-  scripts/control_arm_cli.py
-  scripts/test_arm_movement.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
