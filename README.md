@@ -6,6 +6,18 @@ Instalar paquetes de ros2 control:
 sudo apt install ros-humble-ros2-control
 sudo apt install ros-humble-ros2-controllers
 ```
+No olvidar actualizar tu repo a la última versión:
+```bash
+git pull origin main
+```
+
+## Moveit
+
+### Correr la simulación y moveit en un mismo script
+```bash
+ros2 launch yam_arm_moveit_config yam_arm_moveit_gazebo.launch.py
+```
+
 ## Simulación
 
 ### Lanzar simulación básica
@@ -78,11 +90,4 @@ ros2 topic echo /joint_states
 ```bash
 ros2 action info /arm_controller/follow_joint_trajectory
 ros2 action info /gripper_controller/gripper_cmd
-```
-
-## Moveit
-
-### Correr la simulación y moveit en un mismo script
-```bash
-ros2 launch yam_arm_moveit_config yam_arm_moveit_gazebo.launch.py
 ```
