@@ -1,5 +1,11 @@
 # YAM Arm - Comandos Principales
 
+## Setup
+Instalar paquetes de ros2 control:
+```bash
+sudo apt install ros-humble-ros2-control
+sudo apt install ros-humble-ros2-controllers
+```
 ## Simulación
 
 ### Lanzar simulación básica
@@ -63,8 +69,6 @@ ros2 action send_goal /gripper_controller/gripper_cmd \
 ros2 run yam_arm_gazebo control_arm_cli.py
 ```
 
-## Ver Estado
-
 ### Ver estados de las articulaciones
 ```bash
 ros2 topic echo /joint_states
@@ -76,3 +80,9 @@ ros2 action info /arm_controller/follow_joint_trajectory
 ros2 action info /gripper_controller/gripper_cmd
 ```
 
+## Moveit
+
+### Correr la simulación y moveit en un mismo script
+```bash
+ros2 launch yam_arm_moveit_config yam_arm_moveit_gazebo.launch.py
+```
